@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * Seven Sins Tattoo — Design Tokens
+ * Ink-black warmth, paper-tone neutrals, gold-tooled accent.
+ * Playfair Display: editorial headlines.
+ * Cormorant Garamond: long-form body, prose.
+ * Space Grotesk: UI chrome only — navigation, buttons, forms, labels.
+ */
+@layer base {
+  :root {
+    --background: 30 8% 3%;
+    --foreground: 36 15% 92%;
+    --card: 30 6% 5%;
+    --card-foreground: 36 15% 92%;
+    --popover: 30 6% 5%;
+    --popover-foreground: 36 15% 92%;
+    --primary: 36 15% 92%;
+    --primary-foreground: 30 8% 5%;
+    --secondary: 30 6% 10%;
+    --secondary-foreground: 36 15% 92%;
+    --muted: 30 5% 11%;
+    --muted-foreground: 36 8% 58%;
+    --accent: 39 29% 69%;
+    --accent-foreground: 30 8% 8%;
+    --destructive: 0 55% 38%;
+    --destructive-foreground: 0 0% 96%;
+    --border: 30 5% 14%;
+    --input: 30 5% 14%;
+    --ring: 36 15% 92%;
+    --radius: 0rem;
+    --font-sans: 'Space Grotesk';
+    --font-body: 'Cormorant Garamond';
+    --font-display: 'Playfair Display';
+  }
+
+  .dark {
+    --background: 30 8% 3%;
+    --foreground: 36 15% 92%;
+    --card: 30 6% 5%;
+    --card-foreground: 36 15% 92%;
+    --popover: 30 6% 5%;
+    --popover-foreground: 36 15% 92%;
+    --primary: 36 15% 92%;
+    --primary-foreground: 30 8% 5%;
+    --secondary: 30 6% 10%;
+    --secondary-foreground: 36 15% 92%;
+    --muted: 30 5% 11%;
+    --muted-foreground: 36 8% 58%;
+    --accent: 39 29% 69%;
+    --accent-foreground: 30 8% 8%;
+    --destructive: 0 55% 38%;
+    --destructive-foreground: 0 0% 96%;
+    --border: 30 5% 14%;
+    --input: 30 5% 14%;
+    --ring: 36 15% 92%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body), ui-serif, Georgia, serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* UI chrome: Space Grotesk */
+  nav, button, input, select, textarea, label, .ui-chrome {
+    font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  }
+
+  /* Editorial display: Playfair Display */
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display), ui-serif, Georgia, serif;
+  }
+
+  /* Long-form body: Cormorant Garamond */
+  p, li, blockquote, figcaption, .font-body {
+    font-family: var(--font-body), ui-serif, Georgia, serif;
+  }
+}
+
+/* Hide scrollbar for scrollable containers */
+@layer utilities {
+  .scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+}

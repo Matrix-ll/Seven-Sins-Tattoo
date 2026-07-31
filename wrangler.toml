@@ -1,0 +1,9 @@
+name = "seven-sins-tattoo"
+main = "worker/index.ts"
+compatibility_date = "2026-07-31"
+
+[env.production]
+routes = [
+  { pattern = "sevensins.hellofig.app/api/*", zone_name = "hellofig.app" },
+  { pattern = "*.preview-hellofig.app/api/*", zone_name = "hellofig.app" }
+]
