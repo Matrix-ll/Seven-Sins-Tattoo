@@ -11,18 +11,18 @@ export default function PaymentCancelPage() {
             PAYMENT NOT COMPLETED
           </p>
           <h1 className="mt-6 font-[Playfair Display] text-4xl font-black uppercase leading-[1.05] text-white sm:text-5xl">
-            NO CHARGE<br />WAS MADE
+            NO CHARGE WAS COMPLETED
           </h1>
           <p className="mt-8 font-['Cormorant Garamond'] text-xl leading-relaxed text-[#C8B89A]/80">
-            No charge was completed. You may return and try again when ready.
+            You may return to the selected project and try again when ready.
           </p>
 
           <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
-              to="/membership"
+              to="/services"
               className="inline-flex h-14 items-center justify-center border border-[#C8B89A]/60 px-10 text-sm font-semibold uppercase tracking-[0.15em] text-[#C8B89A] transition hover:border-[#C8B89A] hover:text-white"
             >
-              TRY AGAIN
+              RETURN TO SERVICES
             </Link>
             <Link
               to="/"
