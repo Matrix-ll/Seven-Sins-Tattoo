@@ -3,6 +3,8 @@ import { Menu, X } from 'lucide-react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { navigation } from '@/data/seed'
 
+const EMBLEM = 'https://storage.googleapis.com/figapp-44eac.appspot.com/chat-attachments/eaif8ssL2XQD47wTDX7ZoRjOmmk1/75ecc8c3-f566-4543-9350-25cf141d56d3/images/1785638277505-lerl0jyivbj.png'
+
 export default function Navbar() {
   const [open, setOpen] = useState(false)
   const location = useLocation()
@@ -15,9 +17,10 @@ export default function Navbar() {
       <nav className="mx-auto flex max-w-[90rem] items-center justify-between px-6 py-7 sm:px-12">
         <Link
           to="/"
-          className="group flex items-center"
+          className="group flex items-center gap-3"
           aria-label="Seven Sins Tattoo — Home"
         >
+          <img src={EMBLEM} alt="" className="h-8 w-auto opacity-90 group-hover:opacity-100 transition-opacity" />
           <span className="font-display text-xl font-black uppercase tracking-[0.18em] text-foreground/90 transition-colors duration-500 group-hover:text-foreground">
             Seven Sins
           </span>
