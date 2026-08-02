@@ -15,6 +15,46 @@ const FILTER_TO_SLUG: Record<string, string> = {
   'LARGE SCALE': 'large-scale-custom',
 }
 
+function ProductCard({ product }: { product: typeof CATALOG_PRODUCTS[number] }) {
+  return (
+    <Link
+      to={`/services/${product.categorySlug}/${product.slug}`}
+      className="group flex flex-col border border-[#C8B89A]/8 hover:border-[#C8B89A]/20 transition-colors"
+    >
+      <div className="relative aspect-[3/4] overflow-hidden bg-[#0A0A0A]">
+        <img
+          src={product.image}
+          alt={product.imageAlt}
+          className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+          loading="lazy"
+        />
+        <span className="absolute top-2 left-2 font-sans text-[10px] font-medium text-white/60 bg-black/60 px-1.5 py-0.5">
+          {String(product.id).padStart(2, '0')}
+        </span>
+      </div>
+      <div className="flex flex-col flex-1 p-3 sm:p-4">
+        <p className="font-sans text-[9px] font-medium uppercase tracking-[0.12em] text-[#C8B89A]/40 mb-1">
+          {product.category}
+        </p>
+        <h3 className="font-[Playfair Display] text-sm font-bold uppercase leading-[1.2] text-white group-hover:text-[#C8B89A] transition-colors line-clamp-2">
+          {product.name}
+        </h3>
+        <p className="mt-1 font-['Cormorant Garamond'] text-xs leading-relaxed text-[#C8B89A]/45 line-clamp-2">
+          {product.shortDescription}
+        </p>
+        <div className="mt-auto pt-3 flex items-end justify-between">
+          <p className="font-[Playfair Display] text-lg font-bold text-[#C8B89A]">
+            ${product.amount.toLocaleString()}
+          </p>
+          <span className="shrink-0 font-sans text-[9px] font-medium uppercase tracking-[0.12em] text-[#C8B89A]/50 border border-[#C8B89A]/20 px-2 py-1 transition-colors group-hover:border-[#C8B89A]/40 group-hover:text-[#C8B89A]/80">
+            VIEW PROJECT
+          </span>
+        </div>
+      </div>
+    </Link>
+  )
+}
+
 export default function ServicesPage() {
   const [active, setActive] = useState<string>('ALL')
 
@@ -72,93 +112,29 @@ export default function ServicesPage() {
         </div>
       </div>
 
-      {/* Product Grid — Standard (1-25), 3-column desktop */}
+      {/* Product Grid: 5-col desktop, 3-col tablet, 1-col mobile */}
       <section className="pb-16 sm:pb-20">
         <div className="mx-auto max-w-[90rem] px-3 sm:px-10 lg:px-12">
-          <div className="grid gap-5 sm:gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-3 sm:gap-4 sm:grid-cols-3 xl:grid-cols-5">
             {standardProducts.map((product) => (
-              <Link
-                key={product.id}
-                to={`/services/${product.categorySlug}/${product.slug}`}
-                className="group block border border-[#C8B89A]/8 hover:border-[#C8B89A]/20 transition-colors"
-              >
-                <div className="aspect-[3/4] overflow-hidden bg-[#0A0A0A]">
-                  <img
-                    src={product.image}
-                    alt={product.imageAlt}
-                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-                    loading="lazy"
-                  />
-                </div>
-                <div className="p-5 sm:p-6">
-                  <p className="font-sans text-[10px] font-medium uppercase tracking-[0.15em] text-[#C8B89A]/40 mb-1.5">
-                    {product.category}
-                  </p>
-                  <h3 className="font-[Playfair Display] text-xl font-bold uppercase leading-[1.15] text-white group-hover:text-[#C8B89A] transition-colors">
-                    {product.name}
-                  </h3>
-                  <p className="mt-1.5 font-['Cormorant Garamond'] text-sm leading-relaxed text-[#C8B89A]/50">
-                    {product.scaleOrSession}
-                  </p>
-                  <div className="mt-4 flex items-end justify-between">
-                    <p className="font-[Playfair Display] text-2xl font-bold text-[#C8B89A]">
-                      ${product.amount.toLocaleString()}
-                    </p>
-                    <span className="shrink-0 font-sans text-[10px] font-medium uppercase tracking-[0.15em] text-[#C8B89A]/60 border border-[#C8B89A]/20 px-3 py-1.5 transition-colors group-hover:border-[#C8B89A]/50 group-hover:text-[#C8B89A]/90">
-                      VIEW PROJECT
-                    </span>
-                  </div>
-                </div>
-              </Link>
+              <ProductCard key={product.id} product={product} />
             ))}
           </div>
         </div>
       </section>
 
-      {/* Large Scale & Custom (26-35) — 2-column premium layout */}
+      {/* Large Scale & Custom divider + same grid */}
       {largeScaleProducts.length > 0 && (
         <section className="pb-32 sm:pb-40 border-t border-[#C8B89A]/5 pt-16 sm:pt-20">
           <div className="mx-auto max-w-[90rem] px-3 sm:px-10 lg:px-12">
-            <div className="mb-10 sm:mb-14">
+            <div className="mb-8 sm:mb-12">
               <p className="font-sans text-[11px] font-medium uppercase tracking-[0.25em] text-[#C8B89A]/50">
                 LARGE SCALE &amp; CUSTOM
               </p>
             </div>
-            <div className="grid gap-6 sm:grid-cols-2">
+            <div className="grid gap-3 sm:gap-4 sm:grid-cols-3 xl:grid-cols-5">
               {largeScaleProducts.map((product) => (
-                <Link
-                  key={product.id}
-                  to={`/services/${product.categorySlug}/${product.slug}`}
-                  className="group block border border-[#C8B89A]/8 hover:border-[#C8B89A]/15 transition-colors"
-                >
-                  <div className="aspect-[16/9] overflow-hidden bg-[#0A0A0A]">
-                    <img
-                      src={product.image}
-                      alt={product.imageAlt}
-                      className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
-                      loading="lazy"
-                    />
-                  </div>
-                  <div className="p-6 sm:p-8">
-                    <p className="font-sans text-[10px] font-medium uppercase tracking-[0.15em] text-[#C8B89A]/40 mb-2">
-                      {product.category}
-                    </p>
-                    <h3 className="font-[Playfair Display] text-2xl font-bold uppercase leading-[1.1] text-white group-hover:text-[#C8B89A] transition-colors sm:text-3xl">
-                      {product.name}
-                    </h3>
-                    <p className="mt-2 font-['Cormorant Garamond'] text-base leading-relaxed text-[#C8B89A]/50 max-w-lg">
-                      {product.scaleOrSession}
-                    </p>
-                    <div className="mt-6 flex items-end justify-between">
-                      <p className="font-[Playfair Display] text-3xl font-bold text-[#C8B89A] sm:text-4xl">
-                        ${product.amount.toLocaleString()}
-                      </p>
-                      <span className="shrink-0 font-sans text-[11px] font-semibold uppercase tracking-[0.15em] text-[#C8B89A]/60 border border-[#C8B89A]/20 px-4 py-2 transition-colors group-hover:border-[#C8B89A]/50 group-hover:text-[#C8B89A]/90">
-                        VIEW PROJECT
-                      </span>
-                    </div>
-                  </div>
-                </Link>
+                <ProductCard key={product.id} product={product} />
               ))}
             </div>
           </div>
