@@ -2,14 +2,11 @@ import type { Artist, TattooWork, TattooStyle, Promise as PromiseType, Membershi
 
 export const navigation: NavItem[] = [
   { label: 'Work', href: '#work' },
-  { label: 'About', href: '/about' },
   { label: 'Gallery', href: '/gallery' },
   { label: 'Services', href: '/services' },
-  { label: 'Artists', href: '/artists' },
   { label: 'Styles', href: '/styles' },
   { label: 'Pricing', href: '/pricing' },
   { label: 'Membership', href: '/membership' },
-  { label: 'Booking', href: '/booking' },
   { label: 'FAQ', href: '/faq' },
   { label: 'Contact', href: '#contact' },
 ]
