@@ -14,13 +14,19 @@ export default function PaymentSuccessPage() {
             YOUR PROJECT PAYMENT<br />HAS BEEN SUBMITTED
           </h1>
           <p className="mt-8 font-['Cormorant Garamond'] text-xl leading-relaxed text-[#C8B89A]/80">
-            Thank you for choosing Seven Sins Tattoo. The studio will contact you to confirm placement, references, and scheduling for your project.
+            Thank you for choosing Seven Sins Tattoo. Please complete your appointment details so our studio can review placement, availability, references, and scheduling.
           </p>
           <p className="mt-6 font-sans text-[12px] leading-relaxed text-[#C8B89A]/40 max-w-lg mx-auto">
-            Payment does not automatically confirm an appointment date. The studio will reach out to finalize project details.
+            Payment does not automatically confirm an appointment date. The studio will contact you to finalize scheduling and project details.
           </p>
 
-          <div className="mt-12 flex items-center justify-center">
+          <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Link
+              to="/booking"
+              className="inline-flex h-14 items-center justify-center bg-[#C8B89A] px-10 text-sm font-semibold uppercase tracking-[0.15em] text-black transition hover:bg-[#D4C8A8]"
+            >
+              COMPLETE APPOINTMENT DETAILS
+            </Link>
             <Link
               to="/"
               className="inline-flex h-14 items-center justify-center border border-[#C8B89A]/60 px-10 text-sm font-semibold uppercase tracking-[0.15em] text-[#C8B89A] transition hover:border-[#C8B89A] hover:text-white"
