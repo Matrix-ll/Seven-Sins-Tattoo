@@ -130,15 +130,15 @@ export default function ProductDetailPage() {
               {/* Policy Notice */}
               <div className="mt-12 pt-8 border-t border-[#C8B89A]/10 space-y-3">
                 <p className="font-sans text-[11px] leading-relaxed text-[#C8B89A]/40">
-                  Full payment reserves the selected project scope, not a specific appointment date. Placement, sizing, references, artist availability, and scheduling will be confirmed after payment. Changes outside the listed scope may require an additional charge.
+                  Full payment secures the selected project scope. Placement, sizing, references, artist availability, and scheduling will be confirmed after purchase. Changes outside the listed scope may require an additional charge.
                 </p>
                 <p className="font-sans text-[10px] leading-relaxed text-[#C8B89A]/30">
-                  For questions before payment, use ASK ABOUT THIS PROJECT.
+                  For questions before purchasing, contact the studio directly.
                 </p>
               </div>
 
-              {/* CTA Buttons */}
-              <div className="mt-6 space-y-4">
+              {/* CTA Button */}
+              <div className="mt-6">
                 {product.stripeUrl ? (
                   <a
                     href={opening ? undefined : product.stripeUrl}
@@ -152,7 +152,7 @@ export default function ProductDetailPage() {
                         : 'bg-[#C8B89A] text-black hover:bg-[#D4C8A8]'
                     }`}
                   >
-                    {opening ? 'OPENING SECURE CHECKOUT' : 'RESERVE & PAY IN FULL'}
+                    {opening ? 'OPENING SECURE CHECKOUT' : 'PURCHASE & PAY IN FULL'}
                   </a>
                 ) : (
                   <button
@@ -162,12 +162,6 @@ export default function ProductDetailPage() {
                     PAYMENT LINK COMING NEXT
                   </button>
                 )}
-                <Link
-                  to="/booking"
-                  className="flex h-14 w-full items-center justify-center border border-[#C8B89A]/60 text-sm font-semibold uppercase tracking-[0.18em] text-[#C8B89A] transition hover:border-[#C8B89A] hover:text-white"
-                >
-                  ASK ABOUT THIS PROJECT
-                </Link>
               </div>
             </div>
           </div>
