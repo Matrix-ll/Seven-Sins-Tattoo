@@ -17,32 +17,28 @@ const FILTER_TO_SLUG: Record<string, string> = {
 
 function ProductCard({ product }: { product: typeof CATALOG_PRODUCTS[number] }) {
   return (
-    <div className="group flex flex-col border border-[#C8B89A]/8 hover:border-[#C8B89A]/20 transition-colors">
-      <Link
-        to={`/services/${product.categorySlug}/${product.slug}`}
-        className="block"
-      >
-        <div className="relative aspect-[3/4] overflow-hidden bg-[#0A0A0A]">
-          <img
-            src={product.image}
-            alt={product.imageAlt}
-            className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-            loading="lazy"
-          />
-          <span className="absolute top-2 left-2 font-sans text-[10px] font-medium text-white/60 bg-black/60 px-1.5 py-0.5">
-            {String(product.id).padStart(2, '0')}
-          </span>
-        </div>
-      </Link>
+    <Link
+      to={`/services/${product.categorySlug}/${product.slug}`}
+      className="group flex flex-col border border-[#C8B89A]/8 hover:border-[#C8B89A]/20 transition-colors"
+    >
+      <div className="relative aspect-[3/4] overflow-hidden bg-[#0A0A0A]">
+        <img
+          src={product.image}
+          alt={product.imageAlt}
+          className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+          loading="lazy"
+        />
+        <span className="absolute top-2 left-2 font-sans text-[10px] font-medium text-white/60 bg-black/60 px-1.5 py-0.5">
+          {String(product.id).padStart(2, '0')}
+        </span>
+      </div>
       <div className="flex flex-col flex-1 p-3 sm:p-4">
         <p className="font-sans text-[9px] font-medium uppercase tracking-[0.12em] text-[#C8B89A]/40 mb-1">
           {product.category}
         </p>
-        <Link to={`/services/${product.categorySlug}/${product.slug}`}>
-          <h3 className="font-[Playfair Display] text-sm font-bold uppercase leading-[1.2] text-white group-hover:text-[#C8B89A] transition-colors line-clamp-2">
-            {product.name}
-          </h3>
-        </Link>
+        <h3 className="font-[Playfair Display] text-sm font-bold uppercase leading-[1.2] text-white group-hover:text-[#C8B89A] transition-colors line-clamp-2">
+          {product.name}
+        </h3>
         <p className="mt-1 font-['Cormorant Garamond'] text-xs leading-relaxed text-[#C8B89A]/45 line-clamp-2">
           {product.shortDescription}
         </p>
@@ -50,23 +46,12 @@ function ProductCard({ product }: { product: typeof CATALOG_PRODUCTS[number] }) 
           <p className="font-[Playfair Display] text-lg font-bold text-[#C8B89A]">
             ${product.amount.toLocaleString()}
           </p>
+          <span className="shrink-0 font-sans text-[9px] font-medium uppercase tracking-[0.12em] text-[#C8B89A]/50 border border-[#C8B89A]/20 px-2 py-1 transition-colors group-hover:border-[#C8B89A]/40 group-hover:text-[#C8B89A]/80">
+            VIEW PROJECT
+          </span>
         </div>
       </div>
-      <div className="px-3 pb-3 sm:px-4 sm:pb-4">
-        {product.stripeUrl ? (
-          <a
-            href={product.stripeUrl}
-            className="flex h-9 w-full items-center justify-center bg-[#C8B89A] text-black text-[10px] font-semibold uppercase tracking-[0.12em] hover:bg-[#D4C8A8] transition-colors"
-          >
-            RESERVE &amp; PAY IN FULL
-          </a>
-        ) : (
-          <span className="flex h-9 w-full items-center justify-center border border-[#C8B89A]/20 text-[10px] font-semibold uppercase tracking-[0.12em] text-[#C8B89A]/30">
-            PAYMENT LINK COMING NEXT
-          </span>
-        )}
-      </div>
-    </div>
+    </Link>
   )
 }
 
