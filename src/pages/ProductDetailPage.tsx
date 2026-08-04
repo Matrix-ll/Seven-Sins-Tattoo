@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { CATALOG_PRODUCTS } from '@/data/catalog'
 import { Img } from '@/components/ui/Img'
@@ -6,7 +5,6 @@ import { Img } from '@/components/ui/Img'
 export default function ProductDetailPage() {
   const { category, slug } = useParams<{ category: string; slug: string }>()
   const product = CATALOG_PRODUCTS.find((p) => p.categorySlug === category && p.slug === slug)
-  const [opening, setOpening] = useState(false)
 
   if (!product || product.pendingImage) {
     return (
@@ -141,18 +139,10 @@ export default function ProductDetailPage() {
               <div className="mt-6">
                 {product.stripeUrl ? (
                   <a
-                    href={opening ? undefined : product.stripeUrl}
-                    onClick={(e) => {
-                      if (opening) { e.preventDefault(); return }
-                      setOpening(true)
-                    }}
-                    className={`flex h-14 w-full items-center justify-center text-sm font-semibold uppercase tracking-[0.18em] transition ${
-                      opening
-                        ? 'border border-[#C8B89A]/30 text-[#C8B89A]/50 cursor-wait'
-                        : 'bg-[#C8B89A] text-black hover:bg-[#D4C8A8]'
-                    }`}
+                    href={product.stripeUrl}
+                    className="flex h-14 w-full items-center justify-center bg-[#C8B89A] text-sm font-semibold uppercase tracking-[0.18em] text-black transition hover:bg-[#D4C8A8]"
                   >
-                    {opening ? 'OPENING SECURE CHECKOUT' : 'PURCHASE & PAY IN FULL'}
+                    PURCHASE &amp; PAY IN FULL
                   </a>
                 ) : (
                   <button
