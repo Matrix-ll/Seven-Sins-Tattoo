@@ -46,25 +46,16 @@ export default function PricingPage() {
         </div>
       </section>
 
-      {/* ── Custom Payment ── */}
+      {/* ── Studio Minimum ── */}
       <section className="pb-16 sm:pb-24">
         <div className="mx-auto max-w-[90rem] px-6 sm:px-10 lg:px-12">
           <div className="border border-[#C8B89A]/10 p-8 sm:p-10 text-center">
             <p className="font-sans text-[10px] font-medium uppercase tracking-[0.2em] text-[#C8B89A]/40 mb-3">
-              CUSTOM DEPOSIT
+              STUDIO MINIMUM
             </p>
             <p className="font-[Playfair Display] text-5xl font-bold text-[#C8B89A]">
-              $1–$2,000
+              $100
             </p>
-            <p className="mt-3 font-['Cormorant Garamond'] text-base text-[#C8B89A]/50 max-w-md mx-auto">
-              Choose any amount. Suitable for deposits, custom projects, or payments outside fixed-price services.
-            </p>
-            <a
-              href="https://buy.stripe.com/14AbIVdhH71q2MV0WQ6oo0C"
-              className="mt-6 inline-flex h-14 items-center justify-center bg-[#C8B89A] px-10 text-sm font-semibold uppercase tracking-[0.18em] text-black transition hover:bg-[#D4C8A8]"
-            >
-              MAKE A CUSTOM PAYMENT
-            </a>
           </div>
         </div>
       </section>
