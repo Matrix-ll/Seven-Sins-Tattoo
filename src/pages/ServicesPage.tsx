@@ -159,12 +159,20 @@ export default function ServicesPage() {
               {aftercareProducts.map((product) => (
                 <div key={product.id} className="flex flex-col border border-[#C8B89A]/8 hover:border-[#C8B89A]/20 transition-colors">
                   <div className="relative aspect-square overflow-hidden bg-[#0A0A0A]">
-                    <img
-                      src={product.image}
-                      alt={product.imageAlt}
-                      className="h-full w-full object-cover"
-                      loading="lazy"
-                    />
+                    {product.image ? (
+                      <img
+                        src={product.image}
+                        alt={product.imageAlt}
+                        className="h-full w-full object-cover"
+                        loading="lazy"
+                      />
+                    ) : (
+                      <div className="flex h-full w-full items-center justify-center">
+                        <span className="font-sans text-[10px] font-medium uppercase tracking-[0.2em] text-[#C8B89A]/30">
+                          IMAGE PENDING
+                        </span>
+                      </div>
+                    )}
                   </div>
                   <div className="flex flex-col flex-1 p-5 sm:p-6">
                     <p className="font-sans text-[9px] font-medium uppercase tracking-[0.12em] text-[#C8B89A]/40 mb-2">
@@ -180,9 +188,20 @@ export default function ServicesPage() {
                       <p className="font-[Playfair Display] text-xl font-bold text-[#C8B89A]">
                         ${product.amount}
                       </p>
-                      <span className="shrink-0 font-sans text-[9px] font-medium uppercase tracking-[0.12em] text-[#C8B89A]/40 border border-[#C8B89A]/20 px-2 py-1">
-                        PAYMENT LINK PENDING
-                      </span>
+                      {product.stripeUrl ? (
+                        <a
+                          href={product.stripeUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="shrink-0 font-sans text-[9px] font-medium uppercase tracking-[0.12em] text-[#C8B89A] border border-[#C8B89A]/40 px-2 py-1 transition hover:bg-[#C8B89A] hover:text-black"
+                        >
+                          PURCHASE
+                        </a>
+                      ) : (
+                        <span className="shrink-0 font-sans text-[9px] font-medium uppercase tracking-[0.12em] text-[#C8B89A]/40 border border-[#C8B89A]/20 px-2 py-1">
+                          PAYMENT LINK PENDING
+                        </span>
+                      )}
                     </div>
                   </div>
                 </div>

@@ -507,7 +507,7 @@ export const membershipConfig: MembershipConfig = {
 
 export const studioInfo: StudioInfo = {
   address: '152 Everett St, Folkston, GA 31537',
-  phone: '912-227-6365',
+  phone: '(912) 555-0147',
   email: 'hello@sevensins.ing',
   instagram: '@sevensins',
   hours: 'Monday \u2014 Saturday, 12:00 PM \u2014 8:00 PM',
