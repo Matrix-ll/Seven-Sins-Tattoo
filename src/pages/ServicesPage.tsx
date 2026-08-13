@@ -157,23 +157,33 @@ export default function ServicesPage() {
             </div>
             <div className="grid gap-3 sm:gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {aftercareProducts.map((product) => (
-                <div key={product.id} className="flex flex-col border border-[#C8B89A]/8 hover:border-[#C8B89A]/20 transition-colors p-5 sm:p-6">
-                  <p className="font-sans text-[9px] font-medium uppercase tracking-[0.12em] text-[#C8B89A]/40 mb-2">
-                    AFTERCARE · PRESERVATION
-                  </p>
-                  <h3 className="font-[Playfair Display] text-base font-bold uppercase leading-[1.2] text-white">
-                    {product.name}
-                  </h3>
-                  <p className="mt-2 font-['Cormorant Garamond'] text-sm leading-relaxed text-[#C8B89A]/50">
-                    {product.shortDescription}
-                  </p>
-                  <div className="mt-auto pt-5 flex items-end justify-between">
-                    <p className="font-[Playfair Display] text-xl font-bold text-[#C8B89A]">
-                      ${product.amount}
+                <div key={product.id} className="flex flex-col border border-[#C8B89A]/8 hover:border-[#C8B89A]/20 transition-colors">
+                  <div className="relative aspect-square overflow-hidden bg-[#0A0A0A]">
+                    <img
+                      src={product.image}
+                      alt={product.imageAlt}
+                      className="h-full w-full object-cover"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="flex flex-col flex-1 p-5 sm:p-6">
+                    <p className="font-sans text-[9px] font-medium uppercase tracking-[0.12em] text-[#C8B89A]/40 mb-2">
+                      AFTERCARE · PRESERVATION
                     </p>
-                    <span className="shrink-0 font-sans text-[9px] font-medium uppercase tracking-[0.12em] text-[#C8B89A]/40 border border-[#C8B89A]/20 px-2 py-1">
-                      PAYMENT LINK PENDING
-                    </span>
+                    <h3 className="font-[Playfair Display] text-base font-bold uppercase leading-[1.2] text-white">
+                      {product.name}
+                    </h3>
+                    <p className="mt-2 font-['Cormorant Garamond'] text-sm leading-relaxed text-[#C8B89A]/50">
+                      {product.shortDescription}
+                    </p>
+                    <div className="mt-auto pt-5 flex items-end justify-between">
+                      <p className="font-[Playfair Display] text-xl font-bold text-[#C8B89A]">
+                        ${product.amount}
+                      </p>
+                      <span className="shrink-0 font-sans text-[9px] font-medium uppercase tracking-[0.12em] text-[#C8B89A]/40 border border-[#C8B89A]/20 px-2 py-1">
+                        PAYMENT LINK PENDING
+                      </span>
+                    </div>
                   </div>
                 </div>
               ))}
