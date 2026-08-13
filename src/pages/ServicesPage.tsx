@@ -62,8 +62,10 @@ export default function ServicesPage() {
     ? CATALOG_PRODUCTS
     : CATALOG_PRODUCTS.filter((p) => p.categorySlug === FILTER_TO_SLUG[active])
 
-  const standardProducts = filtered.filter((p) => p.id <= 25)
-  const largeScaleProducts = filtered.filter((p) => p.id >= 26)
+  const tattooProducts = filtered.filter((p) => p.categorySlug !== 'aftercare-preservation')
+  const aftercareProducts = filtered.filter((p) => p.categorySlug === 'aftercare-preservation')
+  const standardProducts = tattooProducts.filter((p) => p.id <= 25)
+  const largeScaleProducts = tattooProducts.filter((p) => p.id >= 26)
 
   return (
     <div data-component="src/pages/ServicesPage.tsx" className="min-h-screen bg-black">
@@ -135,6 +137,45 @@ export default function ServicesPage() {
             <div className="grid gap-3 sm:gap-4 sm:grid-cols-3 xl:grid-cols-5">
               {largeScaleProducts.map((product) => (
                 <ProductCard key={product.id} product={product} />
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Aftercare · Preservation section */}
+      {aftercareProducts.length > 0 && (
+        <section className="pb-32 sm:pb-40 border-t border-[#C8B89A]/5 pt-16 sm:pt-20">
+          <div className="mx-auto max-w-[90rem] px-3 sm:px-10 lg:px-12">
+            <div className="mb-8 sm:mb-12">
+              <p className="font-sans text-[11px] font-medium uppercase tracking-[0.25em] text-[#C8B89A]/50">
+                AFTERCARE · PRESERVATION
+              </p>
+              <p className="mt-3 max-w-2xl font-['Cormorant Garamond'] text-lg leading-relaxed text-[#C8B89A]/60">
+                Care for the work long after you leave the atelier.
+              </p>
+            </div>
+            <div className="grid gap-3 sm:gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {aftercareProducts.map((product) => (
+                <div key={product.id} className="flex flex-col border border-[#C8B89A]/8 hover:border-[#C8B89A]/20 transition-colors p-5 sm:p-6">
+                  <p className="font-sans text-[9px] font-medium uppercase tracking-[0.12em] text-[#C8B89A]/40 mb-2">
+                    AFTERCARE · PRESERVATION
+                  </p>
+                  <h3 className="font-[Playfair Display] text-base font-bold uppercase leading-[1.2] text-white">
+                    {product.name}
+                  </h3>
+                  <p className="mt-2 font-['Cormorant Garamond'] text-sm leading-relaxed text-[#C8B89A]/50">
+                    {product.shortDescription}
+                  </p>
+                  <div className="mt-auto pt-5 flex items-end justify-between">
+                    <p className="font-[Playfair Display] text-xl font-bold text-[#C8B89A]">
+                      ${product.amount}
+                    </p>
+                    <span className="shrink-0 font-sans text-[9px] font-medium uppercase tracking-[0.12em] text-[#C8B89A]/40 border border-[#C8B89A]/20 px-2 py-1">
+                      PAYMENT LINK PENDING
+                    </span>
+                  </div>
+                </div>
               ))}
             </div>
           </div>
