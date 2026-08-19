@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { CATALOG_PRODUCTS } from '@/data/catalog'
 import { Img } from '@/components/ui/Img'
@@ -6,7 +5,6 @@ import { Img } from '@/components/ui/Img'
 export default function ProductDetailPage() {
   const { category, slug } = useParams<{ category: string; slug: string }>()
   const product = CATALOG_PRODUCTS.find((p) => p.categorySlug === category && p.slug === slug)
-  const [opening, setOpening] = useState(false)
 
   if (!product || product.pendingImage) {
     return (
@@ -137,22 +135,16 @@ export default function ProductDetailPage() {
                 </p>
               </div>
 
-              {/* CTA Buttons */}
-              <div className="mt-6 space-y-4">
+              {/* CTA Button */}
+              <div className="mt-6">
                 {product.stripeUrl ? (
                   <a
-                    href={opening ? undefined : product.stripeUrl}
-                    onClick={(e) => {
-                      if (opening) { e.preventDefault(); return }
-                      setOpening(true)
-                    }}
-                    className={`flex h-14 w-full items-center justify-center text-sm font-semibold uppercase tracking-[0.18em] transition ${
-                      opening
-                        ? 'border border-[#C8B89A]/30 text-[#C8B89A]/50 cursor-wait'
-                        : 'bg-[#C8B89A] text-black hover:bg-[#D4C8A8]'
-                    }`}
+                    href={product.stripeUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex h-14 w-full items-center justify-center text-sm font-semibold uppercase tracking-[0.18em] transition bg-[#C8B89A] text-black hover:bg-[#D4C8A8]"
                   >
-                    {opening ? 'OPENING SECURE CHECKOUT' : 'RESERVE & PAY IN FULL'}
+                    PURCHASE & PAY IN FULL
                   </a>
                 ) : (
                   <button
@@ -162,12 +154,6 @@ export default function ProductDetailPage() {
                     PAYMENT LINK COMING NEXT
                   </button>
                 )}
-                <Link
-                  to="/booking"
-                  className="flex h-14 w-full items-center justify-center border border-[#C8B89A]/60 text-sm font-semibold uppercase tracking-[0.18em] text-[#C8B89A] transition hover:border-[#C8B89A] hover:text-white"
-                >
-                  ASK ABOUT THIS PROJECT
-                </Link>
               </div>
             </div>
           </div>
