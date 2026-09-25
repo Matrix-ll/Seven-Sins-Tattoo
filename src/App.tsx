@@ -19,6 +19,8 @@ import MembershipPage, { MembershipDetailPage } from '@/pages/MembershipPage'
 import MembershipJoinPage from '@/pages/MembershipJoinPage'
 import FAQPage from '@/pages/FAQPage'
 import ContactPage from '@/pages/ContactPage'
+import PrivacyPolicyPage from '@/pages/PrivacyPolicyPage'
+import TermsOfServicePage from '@/pages/TermsOfServicePage'
 import PaymentSuccessPage from '@/pages/PaymentSuccessPage'
 import PaymentCancelPage from '@/pages/PaymentCancelPage'
 
@@ -48,6 +50,8 @@ export default function App() {
             <Route path="/booking/confirmation" element={<BookingConfirmationPage />} />
             <Route path="/faq" element={<FAQPage />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="/privacy" element={<PrivacyPolicyPage />} />
+            <Route path="/terms" element={<TermsOfServicePage />} />
             <Route path="/payment/success" element={<PaymentSuccessPage />} />
             <Route path="/payment/cancel" element={<PaymentCancelPage />} />
           </Routes>

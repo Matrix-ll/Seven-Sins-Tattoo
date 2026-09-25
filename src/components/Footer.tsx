@@ -19,7 +19,7 @@ export default function Footer() {
       </div>
 
       <div className="relative mx-auto max-w-[90rem] px-6 py-20 sm:px-8 sm:py-28">
-        <div className="grid gap-14 sm:grid-cols-3">
+        <div className="grid gap-14 sm:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div>
             <img src={EMBLEM} alt="" className="h-10 w-auto opacity-80 mb-3" />
@@ -52,7 +52,19 @@ export default function Footer() {
               <Link to="/booking" className="block text-[14px] text-muted-foreground/70 transition-colors duration-300 hover:text-accent">Inquiries</Link>
               <Link to="/faq" className="block text-[14px] text-muted-foreground/70 transition-colors duration-300 hover:text-accent">FAQ</Link>
               <Link to="/pricing" className="block text-[14px] text-muted-foreground/70 transition-colors duration-300 hover:text-accent">Pricing</Link>
+              <Link to="/contact" className="block text-[14px] text-muted-foreground/70 transition-colors duration-300 hover:text-accent">Contact</Link>
               <a href="#" className="block text-[14px] text-muted-foreground/70 transition-colors duration-300 hover:text-accent">Instagram</a>
+            </div>
+          </div>
+
+          {/* Legal */}
+          <div>
+            <p className="ui-chrome text-[11px] font-medium uppercase tracking-[0.18em] text-foreground/60">
+              Legal
+            </p>
+            <div className="mt-5 space-y-2.5">
+              <Link to="/privacy" className="block text-[14px] text-muted-foreground/70 transition-colors duration-300 hover:text-accent">Privacy Policy</Link>
+              <Link to="/terms" className="block text-[14px] text-muted-foreground/70 transition-colors duration-300 hover:text-accent">Terms of Service</Link>
             </div>
           </div>
         </div>
