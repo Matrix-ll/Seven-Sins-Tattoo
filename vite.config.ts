@@ -1,4 +1,4 @@
-// fig-vite-config v6
+// fig-vite-config v8
 import path from 'path'
 import { createHmac, timingSafeEqual } from 'crypto'
 import { defineConfig, Plugin } from 'vite'
@@ -99,5 +99,22 @@ export default defineConfig(({ command }) => ({
     hmr: {
       clientPort: 443,
     },
+    // Platform capabilities (/__fig/*) and the app's own backend Worker (/api/*)
+    // are served by the project's platform origin, not this dev server. Prefix
+    // rules, so new capabilities need no config change. The platform origin is a
+    // preview host, so /api runs against the TEST-env Worker script. changeOrigin
+    // is required: the platform resolves the project from the Host header.
+    proxy: process.env.FIG_PLATFORM_ORIGIN
+      ? {
+          '/__fig': {
+            target: process.env.FIG_PLATFORM_ORIGIN,
+            changeOrigin: true,
+          },
+          '/api': {
+            target: process.env.FIG_PLATFORM_ORIGIN,
+            changeOrigin: true,
+          },
+        }
+      : undefined,
   },
 }))
