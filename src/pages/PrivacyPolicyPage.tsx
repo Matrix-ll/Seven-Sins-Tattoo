@@ -213,6 +213,7 @@ export default function PrivacyPolicyPage() {
             <>
               Email: <PolicyMail address={STUDIO_CONTACT.email} />
             </>,
+            <>Telephone: {STUDIO_CONTACT.phone}</>,
             <>Studio: {STUDIO_CONTACT.address}</>,
             <>
               General enquiries: <PolicyLink to="/contact">Contact the Studio</PolicyLink>

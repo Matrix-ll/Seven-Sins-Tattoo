@@ -236,20 +236,19 @@ export default function TermsOfServicePage() {
       </PolicySection>
 
       <PolicySection number="16" title="Contact us">
-        <PolicyText>
-          Questions about these Terms of Service can be sent to:
-        </PolicyText>
+        <PolicyText>Questions about these Terms of Service can be sent to:</PolicyText>
         <LegalList
           items={[
             <>
               Email: <PolicyMail address={STUDIO_CONTACT.email} />
             </>,
+            <>Telephone: {STUDIO_CONTACT.phone}</>,
             <>Studio: {STUDIO_CONTACT.address}</>,
             <>
               General enquiries: <PolicyLink to="/contact">Contact the Studio</PolicyLink>
             </>,
             <>
-              See also: <PolicyLink to="/privacy">Privacy Policy</PolicyLink>
+              See also: <PolicyLink to="/refund">Refund Policy</PolicyLink>
             </>,
           ]}
         />

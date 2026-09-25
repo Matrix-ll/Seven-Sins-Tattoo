@@ -6,8 +6,8 @@ const ATELIER_IMG =
 
 /* ══════════════════════════════════════════════════════════════
    Shared legal-page shell — hero, article column, closing CTA.
-   Used by the Privacy Policy and Terms of Service pages so both
-   stay visually identical to the rest of the site.
+   Used by the Privacy Policy, Terms of Service and Refund Policy
+   pages so all three stay visually identical to the rest of the site.
    ══════════════════════════════════════════════════════════════ */
 
 export function PolicyLayout({
@@ -147,6 +147,7 @@ export function PolicyMail({ address }: { address: string }) {
 
 export const STUDIO_CONTACT = {
   email: 'hello@sevensins.ing',
+  phone: '912-227-6365',
   address: '152 Everett St, Folkston, GA 31537',
   name: 'Seven Sins Tattoo',
 }

@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { studioInfo } from '@/data/seed'
 
 const EMBLEM = 'https://storage.googleapis.com/figapp-44eac.appspot.com/chat-attachments/eaif8ssL2XQD47wTDX7ZoRjOmmk1/75ecc8c3-f566-4543-9350-25cf141d56d3/images/1785638277505-lerl0jyivbj.png'
 const ATELIER_IMG = 'https://storage.googleapis.com/figapp-44eac.appspot.com/chat-attachments/eaif8ssL2XQD47wTDX7ZoRjOmmk1/e9df8c04-30a3-4b2c-8dd0-01a1e558fbe8/images/1784531290177-kj9ijjlxjl8.png'
@@ -37,9 +38,20 @@ export default function Footer() {
               Studio
             </p>
             <div className="mt-5 space-y-2.5">
-              <p className="text-[14px] text-muted-foreground/70">152 Everett St, Folkston, GA 31537</p>
+              <p className="text-[14px] text-muted-foreground/70">{studioInfo.address}</p>
               <p className="text-[14px] text-muted-foreground/70">By appointment only</p>
-              <p className="text-[14px] text-muted-foreground/70">hello@sevensins.ing</p>
+              <a
+                href={`mailto:${studioInfo.email}`}
+                className="block text-[14px] text-muted-foreground/70 transition-colors duration-300 hover:text-accent"
+              >
+                {studioInfo.email}
+              </a>
+              <a
+                href={`tel:${studioInfo.phone.replace(/[^0-9+]/g, '')}`}
+                className="block text-[14px] text-muted-foreground/70 transition-colors duration-300 hover:text-accent"
+              >
+                {studioInfo.phone}
+              </a>
             </div>
           </div>
 
@@ -53,7 +65,14 @@ export default function Footer() {
               <Link to="/faq" className="block text-[14px] text-muted-foreground/70 transition-colors duration-300 hover:text-accent">FAQ</Link>
               <Link to="/pricing" className="block text-[14px] text-muted-foreground/70 transition-colors duration-300 hover:text-accent">Pricing</Link>
               <Link to="/contact" className="block text-[14px] text-muted-foreground/70 transition-colors duration-300 hover:text-accent">Contact</Link>
-              <a href="#" className="block text-[14px] text-muted-foreground/70 transition-colors duration-300 hover:text-accent">Instagram</a>
+              <a
+                href="https://instagram.com/sevensins"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block text-[14px] text-muted-foreground/70 transition-colors duration-300 hover:text-accent"
+              >
+                Instagram
+              </a>
             </div>
           </div>
 
@@ -65,6 +84,7 @@ export default function Footer() {
             <div className="mt-5 space-y-2.5">
               <Link to="/privacy" className="block text-[14px] text-muted-foreground/70 transition-colors duration-300 hover:text-accent">Privacy Policy</Link>
               <Link to="/terms" className="block text-[14px] text-muted-foreground/70 transition-colors duration-300 hover:text-accent">Terms of Service</Link>
+              <Link to="/refund" className="block text-[14px] text-muted-foreground/70 transition-colors duration-300 hover:text-accent">Refund Policy</Link>
             </div>
           </div>
         </div>
