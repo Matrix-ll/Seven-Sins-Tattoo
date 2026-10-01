@@ -3,7 +3,7 @@ import { Menu, X } from 'lucide-react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { navigation } from '@/data/seed'
 
-const EMBLEM = 'https://storage.googleapis.com/figapp-44eac.appspot.com/chat-attachments/eaif8ssL2XQD47wTDX7ZoRjOmmk1/75ecc8c3-f566-4543-9350-25cf141d56d3/images/1785638277505-lerl0jyivbj.png'
+const EMBLEM = '/images/seven-sins-logo.webp'
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)

@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { studioInfo } from '@/data/seed'
 
-const EMBLEM = 'https://storage.googleapis.com/figapp-44eac.appspot.com/chat-attachments/eaif8ssL2XQD47wTDX7ZoRjOmmk1/75ecc8c3-f566-4543-9350-25cf141d56d3/images/1785638277505-lerl0jyivbj.png'
+const EMBLEM = '/images/seven-sins-logo.webp'
 const ATELIER_IMG = 'https://storage.googleapis.com/figapp-44eac.appspot.com/chat-attachments/eaif8ssL2XQD47wTDX7ZoRjOmmk1/e9df8c04-30a3-4b2c-8dd0-01a1e558fbe8/images/1784531290177-kj9ijjlxjl8.png'
 
 export default function Footer() {
