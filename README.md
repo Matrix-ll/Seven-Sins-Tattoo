@@ -1,13 +1,16 @@
 # Seven Sins Tattoo
 
-Private luxury atelier for permanent art — a fashion-house model tattoo studio
-specializing in commissioned originals with monochrome severity and typographic rigor.
+Independent Vite + React website for Seven Sins Tattoo.
 
-## Pages
-- `/` — Full homepage: hero, featured work, about, artists, styles, promises, pricing, membership, Instagram, booking, contact
-
-## Tech stack
-Vite · React · TypeScript · Tailwind CSS
+## Stack
+- React 18
+- TypeScript
+- Vite
+- Tailwind CSS
+- Supabase
+- Express
+- Resend
+- Hostinger Web Apps
 
 ## Local development
 ```sh
@@ -15,4 +18,15 @@ npm install
 npm run dev
 ```
 
-Built with [Fig](https://hellofig.io) — edit this site by describing changes in plain English.
+## Production
+```sh
+npm run build
+npm start
+```
+
+The Express server serves the Vite build from `dist/` and exposes:
+
+- `GET /api/health`
+- `POST /api/booking/notify`
+
+Configure production values through Hostinger Environment Variables. Do not commit live credentials or API keys.
