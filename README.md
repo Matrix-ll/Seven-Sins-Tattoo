@@ -7,7 +7,6 @@ Independent Vite + React website for Seven Sins Tattoo.
 - TypeScript
 - Vite
 - Tailwind CSS
-- Supabase
 - Express
 - Resend
 - Hostinger Web Apps
@@ -29,4 +28,13 @@ The Express server serves the Vite build from `dist/` and exposes:
 - `GET /api/health`
 - `POST /api/booking/notify`
 
-Configure production values through Hostinger Environment Variables. Do not commit live credentials or API keys.
+Configure production values through Hostinger Environment Variables.
+
+Required:
+- `RESEND_API_KEY`
+
+Optional:
+- `RESEND_FROM_EMAIL`
+- `BOOKING_NOTIFY_EMAIL`
+
+Do not commit live credentials or API keys.
