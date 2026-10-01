@@ -44,6 +44,7 @@ const PLACEMENT_OPTIONS = ['Arm', 'Forearm', 'Shoulder', 'Back', 'Chest', 'Leg',
 const SIZE_OPTIONS = ['Small (under 3 inches)', 'Medium (3\u20136 inches)', 'Large (6\u201312 inches)', 'Half-sleeve', 'Full sleeve', 'Full back piece', 'Other']
 const STYLE_OPTIONS = ['Blackwork', 'Japanese', 'Realism', 'Fine Line', 'Color', 'Neo Traditional', 'No preference', 'Other']
 const CONTACT_OPTIONS = ['Email', 'Phone', 'Text']
+const EMBLEM = '/images/seven-sins-logo.webp'
 
 /* Map error description → field id */
 const ERROR_FIELD_MAP: Record<string, string> = {
@@ -180,6 +181,13 @@ export default function BookingPage() {
       <div data-component="src/pages/BookingPage.tsx" className="bg-black min-h-screen">
         <section className="py-32 sm:py-40">
           <div className="mx-auto max-w-2xl px-6 text-center">
+            <Link to="/" aria-label="Seven Sins Tattoo home — submitted" className="inline-block">
+              <img
+                src={EMBLEM}
+                alt="Seven Sins Tattoo emblem"
+                className="mx-auto mb-8 h-20 w-20 object-contain drop-shadow-[0_0_18px_rgba(212,175,55,0.18)] sm:h-24 sm:w-24"
+              />
+            </Link>
             <p className="font-sans text-xs font-medium uppercase tracking-[0.25em] text-[#C8B89A]/70">CONSULTATION SUBMITTED</p>
             <h1 className="mt-8 font-[Playfair Display] text-4xl font-black uppercase leading-[1.05] text-white sm:text-5xl">
               THANK YOU
@@ -215,6 +223,13 @@ export default function BookingPage() {
       {/* ═══════════ HERO ═══════════ */}
       <section className="pt-32 pb-16 sm:pt-40 sm:pb-24">
         <div className="mx-auto max-w-4xl px-6 sm:px-10 lg:px-16">
+          <Link to="/" aria-label="Seven Sins Tattoo home — booking" className="inline-block">
+            <img
+              src={EMBLEM}
+              alt="Seven Sins Tattoo emblem"
+              className="mb-8 h-20 w-20 object-contain drop-shadow-[0_0_18px_rgba(212,175,55,0.18)] sm:h-24 sm:w-24"
+            />
+          </Link>
           <p className="font-sans text-xs font-medium uppercase tracking-[0.25em] text-[#C8B89A]/70">
             PRIVATE APPOINTMENTS
           </p>

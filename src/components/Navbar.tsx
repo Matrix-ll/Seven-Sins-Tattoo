@@ -20,7 +20,7 @@ export default function Navbar() {
           className="group flex items-center gap-3"
           aria-label="Seven Sins Tattoo — Home"
         >
-          <img src={EMBLEM} alt="" className="h-8 w-auto opacity-90 group-hover:opacity-100 transition-opacity" />
+          <img src={EMBLEM} alt="Seven Sins Tattoo emblem" className="h-8 w-auto opacity-90 group-hover:opacity-100 transition-opacity" />
           <span className="font-display text-xl font-black uppercase tracking-[0.18em] text-foreground/90 transition-colors duration-500 group-hover:text-foreground">
             Seven Sins
           </span>
@@ -69,6 +69,22 @@ export default function Navbar() {
 
       {open && (
         <div className="border-t border-border/40 bg-background/95 backdrop-blur-md px-6 pb-10 pt-5 md:hidden">
+          <Link
+            to="/"
+            onClick={() => setOpen(false)}
+            className="mb-4 flex items-center gap-3 border-b border-border/30 pb-5"
+            aria-label="Seven Sins Tattoo mobile brand"
+          >
+            <img
+              src={EMBLEM}
+              alt="Seven Sins Tattoo emblem"
+              className="h-11 w-11 object-contain opacity-95"
+            />
+            <div>
+              <p className="font-display text-sm font-black uppercase tracking-[0.18em] text-foreground/90">Seven Sins</p>
+              <p className="mt-1 text-[10px] uppercase tracking-[0.22em] text-muted-foreground">Tattoo</p>
+            </div>
+          </Link>
           {navigation.map((item) => {
             if (isPageRoute(item.href)) {
               return (
