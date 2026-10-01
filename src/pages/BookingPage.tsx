@@ -1,8 +1,5 @@
-// Consults save to Supabase.  TODO: Send email notifications to hello@sevensins.ing on new submissions.
-
 import { useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
-import { supabase, supabaseSchema } from '@/lib/supabase'
 
 type FormData = {
   fullName: string
@@ -110,35 +107,8 @@ export default function BookingPage() {
     setSubmitting(true)
     setSubmitError(null)
 
-    const db = supabase.schema(supabaseSchema)
-    const { error: insertErr } = await db
-      .from('consultations')
-      .insert({
-        full_name: form.fullName.trim(),
-        email: form.email.trim(),
-        phone: form.phone.trim() || null,
-        contact_method: form.contactMethod || null,
-        placement: form.placement,
-        size: form.size || null,
-        style: form.style || null,
-        color_type: form.colorType || null,
-        description: form.description.trim(),
-        preferred_dates: form.preferredDates.trim() || null,
-        artist_preference: form.artistPreference.trim() || null,
-        budget: form.budget.trim() || null,
-      })
-
-    setSubmitting(false)
-
-    if (insertErr) {
-      setSubmitError(insertErr.message || 'Failed to submit. Please try again.')
-      window.scrollTo({ top: 0, behavior: 'smooth' })
-      return
-    }
-
-    // Fire-and-forget: notify via Worker (Resend emails)
     try {
-      await fetch('/api/booking/notify', {
+      const response = await fetch('/api/booking/notify', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -156,11 +126,20 @@ export default function BookingPage() {
           budget: form.budget.trim() || null,
         }),
       })
-    } catch (_) {
-      // Notification is best-effort; booking is already saved.
-    }
 
-    setSubmitted(true)
+      if (!response.ok) {
+        const body = await response.json().catch(() => ({}))
+        throw new Error(body?.error || 'Failed to submit. Please try again.')
+      }
+
+      setSubmitted(true)
+    } catch (error) {
+      setSubmitError(error instanceof Error ? error.message : 'Failed to submit. Please try again.')
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+      return
+    } finally {
+      setSubmitting(false)
+    }
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
