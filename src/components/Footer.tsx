@@ -23,10 +23,12 @@ export default function Footer() {
         <div className="grid gap-14 sm:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div>
-            <img src={EMBLEM} alt="" className="h-10 w-auto opacity-80 mb-3" />
-            <p className="font-display text-xl font-black uppercase tracking-[0.18em] text-foreground/90">
-              Seven Sins
-            </p>
+            <div className="flex items-center gap-3">
+              <img src={EMBLEM} alt="" className="h-10 w-auto opacity-80" />
+              <p className="font-display text-xl font-black uppercase tracking-[0.18em] text-foreground/90">
+                DRAMALAVER LLC
+              </p>
+            </div>
             <p className="mt-5 max-w-xs text-[14px] leading-relaxed text-muted-foreground">
               A private atelier for permanent art. Commissioned originals, absolute discretion, monochrome severity.
             </p>
