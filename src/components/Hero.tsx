@@ -1,6 +1,4 @@
 const HERO_IMG = 'https://storage.googleapis.com/figapp-44eac.appspot.com/chat-attachments/KpNlwLtLiOgq09s5Tau6eVK18Ju2/e9df8c04-30a3-4b2c-8dd0-01a1e558fbe8/images/1784554591676-kgouoqy2p88.jpg'
-const EMBLEM = '/images/seven-sins-logo.webp'
-
 export default function Hero() {
   return (
     <section className="relative min-h-screen w-full overflow-hidden bg-black">
@@ -16,11 +14,6 @@ export default function Hero() {
       <div className="relative z-10 flex min-h-screen items-center">
         <div className="w-full max-w-[90rem] mx-auto px-6 sm:px-10 lg:px-12">
           <div className="max-w-[38%] lg:max-w-[35%]">
-            <img
-              src={EMBLEM}
-              alt="Seven Sins Tattoo emblem"
-              className="mb-6 h-16 w-16 object-contain drop-shadow-[0_0_18px_rgba(212,175,55,0.18)] sm:h-20 sm:w-20 lg:h-24 lg:w-24"
-            />
             <p className="font-sans text-[11px] font-medium uppercase tracking-[0.30em] text-[#C8B89A]">
               PRIVATE ATELIER &bull; FOLKSTON, GEORGIA
             </p>
