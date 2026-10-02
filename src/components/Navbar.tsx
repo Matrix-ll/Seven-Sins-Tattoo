@@ -20,7 +20,7 @@ export default function Navbar() {
           className="group flex items-center gap-3"
           aria-label="Seven Sins Tattoo — Home"
         >
-          <img src={EMBLEM} alt="Seven Sins Tattoo emblem" className="h-8 w-auto opacity-90 group-hover:opacity-100 transition-opacity" />
+          <img src={EMBLEM} alt="Seven Sins Tattoo emblem" className="h-10 w-auto opacity-90 group-hover:opacity-100 transition-opacity" />
           <span className="font-display text-xl font-black uppercase tracking-[0.18em] text-foreground/90 transition-colors duration-500 group-hover:text-foreground">
             DRAMALAVER LLC
           </span>
