@@ -11,12 +11,12 @@ import {
 
 export default function TermsOfServicePage() {
   useEffect(() => {
-    document.title = 'Terms of Service — Seven Sins Tattoo | Private Atelier'
+    document.title = 'Terms of Service — Dramalaver LLC | Private Atelier'
     const metaDesc = document.querySelector('meta[name="description"]')
     if (metaDesc) {
       metaDesc.setAttribute(
         'content',
-        'The terms governing use of the Seven Sins Tattoo website, studio services, deposits, appointment scheduling, and membership purchases.'
+        'The terms governing use of the Dramalaver LLC website, studio services, deposits, appointment scheduling, and membership purchases.'
       )
     }
     window.scrollTo(0, 0)
@@ -24,7 +24,7 @@ export default function TermsOfServicePage() {
 
   return (
     <PolicyLayout
-      eyebrow="Legal · Seven Sins Tattoo · Folkston, Georgia"
+      eyebrow="Legal · Dramalaver LLC · Folkston, Georgia"
       title="TERMS OF"
       titleItalic="SERVICE"
       intro="The terms that govern your use of this website and any service, appointment, or membership obtained through it."
