@@ -28,7 +28,7 @@ export default function PrivacyPolicyPage() {
       title="PRIVACY"
       titleItalic="POLICY"
       intro="How this studio collects, uses, and protects the information you share through this website."
-      updated="September 2026"
+      updated="October 2026"
     >
       <PolicySection number="01" title="Overview">
         <PolicyText>
