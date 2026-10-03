@@ -95,7 +95,7 @@ export default function Footer() {
         <div className="mt-20 border-t border-border/30 pt-8">
           <div className="h-px w-16 bg-accent/30 mb-6" />
           <p className="text-[11px] text-muted-foreground/50">
-            &copy; {new Date().getFullYear()} Seven Sins Tattoo. All rights reserved.
+            &copy; {new Date().getFullYear()} Dramalaver LLC. All rights reserved.
           </p>
         </div>
       </div>
