@@ -11,12 +11,12 @@ import {
 
 export default function RefundPolicyPage() {
   useEffect(() => {
-    document.title = 'Refund Policy — Seven Sins Tattoo | Private Atelier'
+    document.title = 'Refund Policy — Dramalaver LLC | Private Atelier'
     const metaDesc = document.querySelector('meta[name="description"]')
     if (metaDesc) {
       metaDesc.setAttribute(
         'content',
-        'How deposits, memberships, and payments are handled by Seven Sins Tattoo, including what is refundable and how to request a refund.'
+        'How deposits, memberships, and payments are handled by Dramalaver LLC, including what is refundable and how to request a refund.'
       )
     }
     window.scrollTo(0, 0)
@@ -24,7 +24,7 @@ export default function RefundPolicyPage() {
 
   return (
     <PolicyLayout
-      eyebrow="Legal · Seven Sins Tattoo · Folkston, Georgia"
+      eyebrow="Legal · Dramalaver LLC · Folkston, Georgia"
       title="REFUND"
       titleItalic="POLICY"
       intro="How deposits, membership purchases, and payments are handled — what is refundable, and how to request a refund."
