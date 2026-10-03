@@ -28,7 +28,7 @@ export default function TermsOfServicePage() {
       title="TERMS OF"
       titleItalic="SERVICE"
       intro="The terms that govern your use of this website and any service, appointment, or membership obtained through it."
-      updated="September 2026"
+      updated="October 2026"
     >
       <PolicySection number="01" title="Acceptance of these terms">
         <PolicyText>
