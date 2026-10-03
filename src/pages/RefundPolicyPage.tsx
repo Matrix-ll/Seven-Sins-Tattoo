@@ -28,7 +28,7 @@ export default function RefundPolicyPage() {
       title="REFUND"
       titleItalic="POLICY"
       intro="How deposits, membership purchases, and payments are handled — what is refundable, and how to request a refund."
-      updated="September 2026"
+      updated="October 2026"
     >
       <PolicySection number="01" title="Overview">
         <PolicyText>
