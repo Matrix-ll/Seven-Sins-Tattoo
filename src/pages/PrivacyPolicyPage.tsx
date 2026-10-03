@@ -11,12 +11,12 @@ import {
 
 export default function PrivacyPolicyPage() {
   useEffect(() => {
-    document.title = 'Privacy Policy — Seven Sins Tattoo | Private Atelier'
+    document.title = 'Privacy Policy — Dramalaver LLC | Private Atelier'
     const metaDesc = document.querySelector('meta[name="description"]')
     if (metaDesc) {
       metaDesc.setAttribute(
         'content',
-        'How Seven Sins Tattoo collects, uses, and protects personal information submitted through this website, including inquiry forms, membership purchases, and analytics.'
+        'How Dramalaver LLC collects, uses, and protects personal information submitted through this website, including inquiry forms, membership purchases, and analytics.'
       )
     }
     window.scrollTo(0, 0)
@@ -24,7 +24,7 @@ export default function PrivacyPolicyPage() {
 
   return (
     <PolicyLayout
-      eyebrow="Legal · Seven Sins Tattoo · Folkston, Georgia"
+      eyebrow="Legal · Dramalaver LLC · Folkston, Georgia"
       title="PRIVACY"
       titleItalic="POLICY"
       intro="How this studio collects, uses, and protects the information you share through this website."
