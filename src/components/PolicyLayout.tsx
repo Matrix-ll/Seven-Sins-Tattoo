@@ -149,5 +149,5 @@ export const STUDIO_CONTACT = {
   email: 'hello@sevensins.ing',
   phone: '912-227-6365',
   address: '152 Everett St, Folkston, GA 31537',
-  name: 'Seven Sins Tattoo',
+  name: 'Dramalaver LLC',
 }
